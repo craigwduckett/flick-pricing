@@ -1,0 +1,62 @@
+{
+	"name": "flick-pricing",
+	"version": "0.0.1",
+	"description": "Web app to show flick pricing and NZ wholesale energy prices",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gliss/flick-pricing.git"
+	},
+	"author": "Craig Duckett",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/gliss/flick-pricing/issues"
+	},
+	"homepage": "https://github.com/gliss/flick-pricing#readme",
+	"bin": "./cli.js",
+	"scripts": {
+		"build": "gulp default",
+		"docs:gulp": "gulpdoc ./gulp/*.js",
+		"lint": "eslint ./cli.js ./gulpfile.js ./gulp/ ./src/ ./test/",
+		"start": "gulp serve",
+		"start:dist": "gulp serve:dist",
+		"update:bower": "ncu -a -m bower --packageFile bower.json",
+		"update:dev": "ncu -a --packageFile package.json"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-preset-env": "^1.7.0",
+		"browser-sync": "^2.24.4",
+		"del": "^3.0.0",
+		"eslint": "^4.19.1",
+		"eslint-config-angular": "^0.5.0",
+		"eslint-plugin-angular": "^3.3.0",
+		"gulp": "^3.9.1",
+		"gulp-angular-filesort": "^1.2.1",
+		"gulp-angular-templatecache": "^2.2.0",
+		"gulp-autoprefixer": "^5.0.0",
+		"gulp-babel": "^7.0.1",
+		"gulp-cssnano": "^2.1.3",
+		"gulp-debug": "^4.0.0",
+		"gulp-eslint": "^4.0.2",
+		"gulp-filter": "^5.1.0",
+		"gulp-flatten": "^0.4.0",
+		"gulp-htmlmin": "^4.0.0",
+		"gulp-inject": "^4.3.2",
+		"gulp-load-plugins": "^1.5.0",
+		"gulp-locales-bundler": "^1.0.0",
+		"gulp-ng-annotate": "^2.1.0",
+		"gulp-rev": "^8.1.1",
+		"gulp-rev-replace": "^0.4.4",
+		"gulp-sass": "^4.0.1",
+		"gulp-size": "^3.0.0",
+		"gulp-sourcemaps": "^2.6.4",
+		"gulp-uglify": "^3.0.0",
+		"gulp-useref": "^3.1.5",
+		"gulp-util": "^3.0.8",
+		"gulpdoc": "^1.1.1",
+		"main-bower-files": "^2.13.1",
+		"npm-check-updates": "^2.14.2",
+		"wiredep": "^4.0.0"
+	}
+}

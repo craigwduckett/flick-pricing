@@ -1,0 +1,16 @@
+<div ng-show="!vm.loading">
+    <h1>Current Flick Pricing</h1>
+
+    <h2>Last updated: {{ vm.lastUpdated }}</h2>
+
+    <div width="600" ng-radial-gauge ranges="vm.gauge.ranges" value="vm.value" value-unit="vm.gauge.unit" precision="vm.gauge.precision"
+        lower-limit="vm.gauge.lowerLimit" upper-limit="vm.gauge.upperLimit" bar-thickness="60">
+    </div>
+
+    <h3>Wholesale price: {{ vm.wholesalePrice }}c/kwh</h3>
+    <h3>Flick price: {{ vm.flickPrice }}c/kwh</h3>
+</div>
+
+<div ng-show="vm.loading">
+    <h1>Loading...</h1>
+</div>
