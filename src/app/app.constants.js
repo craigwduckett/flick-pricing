@@ -3,6 +3,6 @@
 
 	angular
 		.module("app")
-		.constant("SAMPLE_CONSTANT", "Sample constant")
+		.constant("moment", moment)
 		.constant("_", window._);
 })();

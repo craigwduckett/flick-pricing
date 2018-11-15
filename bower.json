@@ -49,6 +49,7 @@
     "angular-ui-router": "^1.0.18",
     "normalize-css": "^8.0.0",
     "ngRadialGauge": "*",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "moment": "momentjs#^2.22.2"
   }
 }

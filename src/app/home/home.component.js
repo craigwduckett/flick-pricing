@@ -10,15 +10,7 @@
 	});
 
 	/** @ngInject */
-	function HomeController(
-		_,
-		$log,
-		$rootScope,
-		$translate,
-		$interval,
-		SAMPLE_CONSTANT,
-		homeService
-	) {
+	function HomeController(_, $log, $interval, homeService) {
 		var vm = this;
 
 		// Scope variables go here:
@@ -34,16 +26,20 @@
 		function activate() {
 			interval();
 			homeService.getCurrentPrices().then(function(data) {
-				var a = _.find(
+				/*var a = _.find(
 					data.charts.prices_last_five_mins_map.data.nodes,
 					function(o) {
 						return o.gip_gxp_full == "OTA2201";
 					}
-				);
+				);*/
+				var length = data.chart.series[0].values.length - 1;
+				var price = data.chart.series[0].values[length][1];
 				vm.value =
-					vm.networkCharge + vm.flickVariableCharge + vm.eaLevy + a.price / 10;
-				vm.lastUpdated = a.run_time;
-				vm.wholesalePrice = a.price / 10;
+					vm.networkCharge + vm.flickVariableCharge + vm.eaLevy + price / 10;
+				vm.lastUpdated = moment(data.chart.series[0].values[length][0]).format(
+					"HH:mm"
+				);
+				vm.wholesalePrice = price / 10;
 				vm.gauge = {
 					upperLimit: 60,
 					lowerLimit: 0,
